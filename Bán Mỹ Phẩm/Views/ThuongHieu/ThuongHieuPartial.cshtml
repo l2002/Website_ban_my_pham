@@ -1,0 +1,23 @@
+﻿@using Bán_Mỹ_Phẩm.Models;
+@model List<Thuonghieu>
+
+<div class="bg-danger" bis_skin_checked="1">
+    <h3 style="padding-left:20px">THƯƠNG HIỆU</h3>
+    @{
+        foreach (var item in Model)
+        {             
+            <button type="button" class="btn btn-primary"><a href="@Url.Action("SanPhamTheoTH", "ThuongHieu", new { @maTH = item.Math })">@item.Tenth</a></button>
+        }
+}
+</div>
+
+<style>
+    a{
+        text-decoration:none;
+        color:white;
+    }
+    a:hover{
+        text-decoration:none;
+        color:white;
+    }
+</style>

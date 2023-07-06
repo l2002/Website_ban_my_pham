@@ -1,0 +1,131 @@
+﻿@using Bán_Mỹ_Phẩm.Models
+@model Sanpham
+
+
+@{
+    ViewBag.Title = "CHI TIẾT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="product-img">
+            <img src="~/Images/@Model.Anhbia" height="420" width="327">
+        </div>
+        <div class="product-info" style="text-align:justify">
+            <div class="product-text">
+                <h2>@Model.Tensp</h2>          
+                <p>Thương hiệu: #<span style="font-weight:bold;color:dodgerblue;">@Model.Thuonghieu.Tenth</span></p>
+                <p>Hãng sản xuất: @Model.Hangsanxuat.Tenhang</p>
+                <p>Mô tả:</p>
+                <p>@Model.Mota</p>
+                <br />
+                <hr />
+            </div>
+            <div class="product-price-btn">
+                <span class="gia">@String.Format("{0:0,0}", @Model.Giatien) VNĐ</span><br /><br />
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMasp = @Model.Masp, @strURL = Request.Url.ToString() }))
+                {
+                    <button type="submit" id="bgnGioHang" class="buy-btn">mua ngay</button>
+                }
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+<style>
+    body {
+    background-color: #fdf1ec;
+}
+
+.wrapper {
+  height: 570px;
+  width: 850px;
+  margin: 50px auto;
+  border-radius: 7px 7px 7px 7px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+.product-img {
+  float: left;
+  height: 500px;
+  width: 400px;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+  float: left;
+  height: 420px;
+  width: 400px;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
+}
+
+.product-price-btn {
+  height: 103px;
+  width: 327px;
+  margin-top: 17px;
+  position: relative;
+}
+
+.product-price-btn p {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  height: 50px;
+  font-family: 'Trocchi', serif;
+  margin: 0 0 0 38px;
+  font-size: 28px;
+  font-weight: lighter;
+  color: #474747;
+}
+
+
+.product-price-btn button {
+  float: right;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
+}
+
+.product-price-btn button:hover {
+  background-color: #79b0a1;
+}
+.gia{
+    color: #fe302e;
+    font-weight: 600;
+    font-family: Georgia,Sans-serifrif;
+    font-size: 31px;
+    font-style: italic;
+    margin-top: 3px;
+    line-height: 40px;
+}
+</style>

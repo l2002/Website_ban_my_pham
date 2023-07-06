@@ -1,0 +1,650 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel=" stylesheet" href="~/Content/Style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    
+    <link rel="icon" type="image/x-icon" href="~/Images/ico.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            background-color: white;
+        }    
+
+        .navbar-inverse {
+            background-color: #FF66FF;
+            border-color: #FF66FF;
+        }
+
+        .top_header {
+            background-color: black;
+            padding-left: 110px;
+            color: white;
+        }
+
+        .form-inline {
+            float: right;
+            padding-top: 10px;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: white;
+            font-size: x-large;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: white;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: white;
+            font-size: large;
+        }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: black;
+        }
+
+        .navbar-brand {
+            color: cadetblue;
+        }
+
+        .spnoibat {
+            background-color: white;
+        }
+
+        .spnoibat h3 {
+            padding-left: 30px;
+        }
+
+    /* Contact*/
+        .textcenter {
+	        text-align: center;
+        }
+        .section1 {
+	        text-align: center;
+	        display: table;
+	        width: 100%;
+        }
+        .section1 .shtext {
+	        display: block;
+	        margin-top: 20px;
+        }
+        .section1 .seperator {
+	        border-bottom:1px solid #a2a2a2;
+	        width: 35px;
+	        display: inline-block;
+	        margin: 20px;
+        }
+
+        .section1 h1 {
+	        font-size: 40px;
+	        color: #A44DD8;
+	        font-weight: normal;
+        }
+
+        .section2 {
+            width: 1200px;
+            margin: 25px auto;
+        }
+        .section2 .col2 {
+	        width: 48.71%;
+        }
+        .section2 .col2.first {
+	        float: left;
+        }
+        .section2 .col2.last {
+	        float: right;
+        }
+        .section2 .col2.column2 {
+	        padding: 0 30px;
+        }
+        .section2 span.collig {
+	        color: #a2a2a2;
+	        margin-right: 10px;
+	        display: inline-block;
+        }
+        .section2 .sec2addr {
+	        display: block;
+	        line-height: 26px;
+        }
+        .section2 .sec2addr p:first-child {
+	        margin-bottom: 10px;
+        }
+        .section2 .sec2contactform input[type="text"], 
+        .section2 .sec2contactform input[type="email"],
+        .section2 .sec2contactform textarea {
+            padding: 18px;
+            border: 0;
+            background: #EDEDED;
+            margin: 7px 0;
+        }
+        .section2 .sec2contactform textarea {
+	        width: 100%;
+	        display: block;
+	        color: #666;
+          resize:none;
+        }
+        .section2 .sec2contactform input[type="submit"] {
+	        padding: 15px 40px;
+            color: #fff;
+            border: 0;
+            background: #A44DD8;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin: 7px 0;
+            cursor: pointer;
+        }
+        .section2 .sec2contactform h3 {
+	        font-weight: normal;
+            margin: 20px 0;
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 19px;
+            color: #A44DD8;
+        }
+       
+      
+        /* responsive contact */
+        @@media only screen and (max-width: 1266px) {
+	        .section2 {
+		        width: 100%;
+	        }
+        }
+        @@media only screen and (max-width: 960px) {
+	        .section2 .col2 {
+		        width: 100%;
+		        display: block;
+	        }
+	        .section2 .col2.first {
+		        margin-bottom: 10px;
+	        }
+	        .section2 .col2.column2 {
+		        padding: 0;
+	        }
+	        body .sec2map {
+		        height: 250px !important;
+	        }
+        }
+        @@media only screen and (max-width: 768px) {
+	        .section2 .sec2addr {
+		        font-size: 14px;
+	        }
+	        .section2 .sec2contactform h3 {
+		        font-size: 16px;
+	        }
+	        .section2 .sec2contactform input[type="text"], .section2 .sec2contactform input[type="email"], .section2 .sec2contactform textarea {
+		        padding: 10px;
+		        margin:3px 0;
+	        }
+	        .section2 .sec2contactform input[type="submit"] {
+		        padding: 10px 30px;
+		        font-size: 14px;
+	        }
+        }
+        @@media only screen and (max-width: 420px) {
+	        .section1 h1 {
+		        font-size: 28px;
+	        }	
+        }
+
+    .wsk-cp-product {
+        background: #fff;
+        padding: 15px;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        position: relative;
+        margin: 20px auto;
+    }
+
+    .wsk-cp-img {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%);
+        -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+        -moz-transform: translate(-50%);
+        -o-transform: translate(-50%);
+        -khtml-transform: translate(-50%);
+        width: 100%;
+        padding: 15px;
+        transition: all 0.2s ease-in-out;
+    }
+
+        .wsk-cp-img img {
+            width: 100%;
+            transition: all 0.2s ease-in-out;
+            border-radius: 6px;
+        }
+
+    .wsk-cp-product:hover .wsk-cp-img {
+        top: -40px;
+    }
+
+        .wsk-cp-product:hover .wsk-cp-img img {
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        }
+
+    .wsk-cp-text {
+        padding-top: 150%;
+    }
+
+        .wsk-cp-text .category {
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px;
+            margin-bottom: 45px;
+            position: relative;
+            transition: all 0.2s ease-in-out;
+        }
+
+            .wsk-cp-text .category > * {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                -webkit-transform: translate(-50%,-50%);
+                -moz-transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+                -o-transform: translate(-50%,-50%);
+                -khtml-transform: translate(-50%,-50%);
+            }
+
+            .wsk-cp-text .category > span {
+                padding: 12px 30px;
+                border: 1px solid #313131;
+                background: #212121;
+                color: #fff;
+                box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+                border-radius: 27px;
+                transition: all 0.05s ease-in-out;
+            }
+
+    .wsk-cp-product:hover .wsk-cp-text .category > span {
+        border-color: #ddd;
+        box-shadow: none;
+        padding: 11px 28px;
+    }
+
+    .wsk-cp-product:hover .wsk-cp-text .category {
+        margin-top: 0px;
+    }
+
+    .wsk-cp-text .title-product {
+        text-align: center;
+    }
+
+        .wsk-cp-text .title-product h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px auto;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+    .wsk-cp-text .description-prod p {
+        margin: 0;
+    }
+    /* Truncate */
+ /* Truncate */
+.wsk-cp-text .description-prod {
+  text-align:center;
+  width: 100%;
+  height:62px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  margin-bottom:15px;
+}
+.card-footer{
+  padding: 25px 0 5px;
+  border-top: 1px solid #ddd;
+}
+.card-footer:after, .card-footer:before{
+  content:'';
+  display:table;
+}
+.card-footer:after{
+  clear:both;
+}
+
+.card-footer .wcf-left{
+  float:left;
+  
+}
+
+.card-footer .wcf-right{
+  float:right;
+}
+
+.price{
+  font-size:18px;
+  font-weight:bold;
+}
+
+input.buy-btn{
+  display:block;
+  color:#212121;
+  text-align:center;
+  font-size: 18px;
+  width:35px;
+  height:35px;
+  line-height:35px;
+  border-radius:50%;
+  border:1px solid grey;
+  transition: all 0.2s ease-in-out;
+}
+input.buy-btn:hover , input.buy-btn:active, input.buy-btn:focus{
+  border-color: #FF9800;
+  background: #FF9800;
+  color: #fff;
+  text-decoration:none;
+}
+.wsk-btn{
+  display:inline-block;
+  color:#212121;
+  text-align:center;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  border-color: #FF9800;
+  background: #FF9800;
+  padding:12px 30px;
+  border-radius:27px;
+  margin: 0 5px;
+}
+.wsk-btn:hover, .wsk-btn:focus, .wsk-btn:active{
+  text-decoration:none;
+  color:#fff;
+}  
+.red{
+  color:#F44336;
+  font-size:22px;
+  display:inline-block;
+  margin: 0 5px;
+}
+@@media screen and (max-width: 991px) {
+  .wsk-cp-product{
+    margin:40px auto;
+  }
+  .wsk-cp-product .wsk-cp-img{
+  top:-40px;
+}
+.wsk-cp-product .wsk-cp-img img{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+  .wsk-cp-product .wsk-cp-text .category > span{
+  border-color:#ddd;
+  box-shadow: none;
+  padding: 11px 28px;
+}
+.wsk-cp-product .wsk-cp-text .category{
+  margin-top: 0px;
+}
+input.buy-btn{
+  border-color: #FF9800;
+  background: #FF9800;
+  color: #fff;
+}
+}
+/*popup*/
+.tbpopup .tboverlay {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 0;
+        display: none;
+    }
+    
+    .tbpopup .tbcontent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: #fff;
+        width: 850px;
+        z-index: 2;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+        border-radius: 20px;
+        display: block;
+        position: fixed;
+        box-shadow: 0px 0px 10px #111;
+    }
+    
+    .tbpopup .tbclose-btn {
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 35px;
+        height: 35px;
+        color: #ff4444;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 50%;
+    }
+    
+    .tbpopup.active .tboverlay {
+        display: block;
+    }
+    
+    .tbpopup.active .tbcontent {
+        transition: all 300ms ease-in-out;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .tbbuttom {
+        background: #00cc00;
+        color: #fff
+    }
+    .btthongbao {
+        margin-top: 1rem;
+        font-size: 2rem;
+        background-color: #1877f2;
+        border-radius: 1.5rem;
+        color: #fff;
+        font-weight: bold;
+        display: inline-block;
+        padding: 0.5rem 3rem;
+        cursor:pointer;
+    }
+    .p1{
+        font-size:20px;
+    }
+    .p2{
+        font-size:22px;
+    }
+    .p3{
+        font-size:22px;
+        color: #ff4444;
+        font-weight:bold
+    }
+    .hi{
+        font-size:30px;font-weight:bold;
+    }
+    @@media (max-width: 64em) {
+        .tbpopup .tbcontent {
+            width: 90%;
+        }
+        .tbpopup .tbclose-btn {
+            width: 60px;
+            height: 60px;
+            font-size: 100px;
+        }
+        .btthongbao {
+            font-size: 3rem;
+        }
+        .p1{
+            font-size: 55px;
+        }
+        .p2{
+            font-size: 60px;
+        }
+        .p3{
+            font-size:60px;
+        }
+        .hi{
+            font-size:80px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    @{
+        var u = Session["use"] as Bán_Mỹ_Phẩm.Models.Nguoidung;
+    }
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="top_header col-md-12">
+
+            <div class="row">
+                <div class="col-sm-4 col-md-0" style="font-size:large">MPV</div>
+                <div class="col-sm-4 col-md-0" style="padding-left:250px">
+                    @Html.Action("GioHangPartial", "GioHang", new { @class = "giohang" })
+                </div>
+                @{
+
+                    if (u != null)
+                    {
+                        <div class="col-sm-4 col-md-0">
+                            Xin chào : @u.Hoten
+                            &nbsp;
+                            <a style="color:red" href="/User/DangXuat"> ĐĂNG XUẤT</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-sm-4 col-md-0">
+                            <a style="color:white" href="/User/Dangky"> Đăng ký</a>
+                            /
+                            <a style="color:white" href="/User/Dangnhap"> Đăng nhập</a>
+                        </div>
+                    }
+                }
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand" src="~/Images/logo.jpg" width="70" height="70" style="padding:0" />
+                @Html.ActionLink("MPV", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <form class="form-inline" style="float:left">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+                </form>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="~/Home/Gioithieu" title="gioithieu">
+                            <span>VỀ MPV</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="lienhe">
+                            <span>THÔNG TIN</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Home/Contact" title="lienhe">
+                            <span>LIÊN HỆ</span>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+    <br /><br />
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div>
+            <img class="img-responsive" src="~/Images/ban1.png" />
+        </div>
+        <br />
+    </div>
+    <footer class="bg-info" style="padding-left:50px">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <h3>CỬA HÀNG MỸ PHẨM VIỆT</h3>
+                <span>Khuyến mãi</span>
+                <br />
+                <span>Sản phẩm</span>
+                <br />
+                <span>Dưỡng thể</span>
+                <br />
+                <span>TP Chức năng</span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <span>Cam kết chất lượng</span>
+                <br />
+                <span>Chính sách vận chuyển</span>
+                <br />
+                <span>Chính sách thanh toán</span>
+                <br />
+                <span>Chính sách đổi hàng</span>
+
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h3>HƯỚNG DẪN</h3>
+                <span>Chính sách đổi hàng</span>
+                <br />
+                <span>Hướng dẫn mua hàng</span>
+                <br />
+                <span>Liên hệ</span>
+                <br />
+                <span>Chính sách bảo mật</span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h3>ĐỊA CHỈ</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0572727718736!2d106.6266403507256!3d10.806925561546462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be27d8b4f4d%3A0x92dcba2950430867!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUaOG7sWMgcGjhuqltIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1664525230947!5m2!1svi!2s" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <hr />
+        <center> <p class="bg-primary">&copy; @DateTime.Now.Year - Nhóm 13</p></center>
+    </footer>
+
+
+   
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f98cd2a9733f4e6090945c59d82107fe" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="QLmyphamModel.Chitietdonhang" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLmyphamModel.Donhang" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLmyphamModel.Hangsanxuat" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLmyphamModel.Nguoidung" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLmyphamModel.PhanQuyen" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLmyphamModel.Sanpham" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLmyphamModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLmyphamModel.Thuonghieu" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="QLmyphamModel.FK_Chitietdonhang_Donhang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLmyphamModel.FK_Chitietdonhang_Sanpham" ManuallyRouted="false" />
+        <AssociationConnector Association="QLmyphamModel.FK_Donhang_Khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLmyphamModel.FK_Sanpham_Hangsanxuat" ManuallyRouted="false" />
+        <AssociationConnector Association="QLmyphamModel.FK_Nguoidung_Nguoidung" ManuallyRouted="false" />
+        <AssociationConnector Association="QLmyphamModel.FK_Sanpham_Thuonghieu" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
