@@ -11,7 +11,7 @@ namespace Bán_Mỹ_Phẩm.Controllers
     {
         //
         // GET: /User/
-        QLmyphamEntities db = new QLmyphamEntities();
+        QL_MyPham_DAEntities3 db = new QL_MyPham_DAEntities3();
 
         public ActionResult Dangky()
         {
@@ -19,12 +19,12 @@ namespace Bán_Mỹ_Phẩm.Controllers
         }
 
         [HttpPost]
-        public ActionResult Dangky(Nguoidung nguoidung)
+        public ActionResult Dangky(NguoiDung nguoidung)
         {
             try
             {
                 // Thêm người dùng  mới
-                db.Nguoidungs.Add(nguoidung);
+                db.NguoiDungs.Add(nguoidung);
                 // Lưu lại vào cơ sở dữ liệu
                 db.SaveChanges();
                 // Nếu dữ liệu đúng thì trả về trang đăng nhập
@@ -52,20 +52,12 @@ namespace Bán_Mỹ_Phẩm.Controllers
         {
             string userMail = userlog["userMail"].ToString();
             string password = userlog["password"].ToString();
-            var islogin = db.Nguoidungs.SingleOrDefault(x => x.Email.Equals(userMail) && x.Matkhau.Equals(password));
+            var islogin = db.NguoiDungs.SingleOrDefault(x => x.Email.Equals(userMail) && x.Matkhau.Equals(password));
 
             if (islogin != null)
-            {
-                if (userMail == "Admin@gmail.com")
-                {
-                    Session["use"] = islogin;
-                    return RedirectToAction("Index", "Admin/Home");
-                }
-                else
-                {
-                    Session["use"] = islogin;
-                    return RedirectToAction("Index", "Home");
-                }
+            {         
+                  Session["use"] = islogin;
+                  return RedirectToAction("Index", "Home");
             }
             else
             {

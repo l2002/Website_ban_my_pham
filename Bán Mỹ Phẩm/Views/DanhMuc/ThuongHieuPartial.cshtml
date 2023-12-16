@@ -1,0 +1,42 @@
+﻿@using Bán_Mỹ_Phẩm.Models;
+@model List<ThuongHieu>
+
+
+@{
+    ViewBag.Title = "MPV - Danh Mục";
+}
+
+<div>
+    <h3 style="padding-left:20px" class="h3">Thương Hiệu</h3>
+    @{
+        foreach (var item in Model)
+        {
+            <button type="button" class="btn btn-primary">
+                <a href="@Url.Action("SanPhamTheoTH", "DanhMuc", new { @maTH = item.MaTH })">@item.TenTH</a>
+            </button>
+        }
+    }
+</div>
+<br />
+<style>
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+        a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+    .h3 {
+        color: #ff6a13;
+        font-size: 23px;
+        font-weight: 700;
+        display: inline-block;
+        background: #fff;
+        width: 100%;
+        padding: 19px 5px;
+        line-height: 1.4;
+    }
+</style>

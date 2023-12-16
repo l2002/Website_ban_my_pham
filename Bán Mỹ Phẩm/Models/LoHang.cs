@@ -12,20 +12,15 @@ namespace Bán_Mỹ_Phẩm.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NguoiDung
+    public partial class LoHang
     {
-        public NguoiDung()
-        {
-            this.DonhangOnls = new HashSet<DonhangOnl>();
-        }
+        public string MaLo { get; set; }
+        public string MaSP { get; set; }
+        public string MaNCC { get; set; }
+        public Nullable<System.DateTime> NgayNhap { get; set; }
+        public Nullable<int> SoLuong { get; set; }
     
-        public int MaNguoiDung { get; set; }
-        public string Hoten { get; set; }
-        public string Email { get; set; }
-        public string Dienthoai { get; set; }
-        public string Matkhau { get; set; }
-        public string Diachi { get; set; }
-    
-        public virtual ICollection<DonhangOnl> DonhangOnls { get; set; }
+        public virtual NhaCC NhaCC { get; set; }
+        public virtual SanPham SanPham { get; set; }
     }
 }

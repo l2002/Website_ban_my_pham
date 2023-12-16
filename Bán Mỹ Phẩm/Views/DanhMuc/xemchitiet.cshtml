@@ -67,10 +67,12 @@
         color: #e2252d;
         font-size: 24px;
     }
+
     em {
         font-style: normal;
         text-decoration-line: line-through;
     }
+
     i {
         font-style: normal;
     }
@@ -79,6 +81,7 @@
         border: 0;
         vertical-align: middle;
     }
+
     .short-article__title {
         display: block;
         overflow: hidden;
@@ -137,7 +140,7 @@
                     <br />
                     <strong>@String.Format("{0:0,0}", @Model.iKHuyenMai()) VNĐ</strong>
                     <em>@String.Format("{0:0,0}", @Model.GiaBan) VNĐ</em>
-                    <i>(-@Model.tenKMNull()%)</i>
+                    <i>(-@Model.KhuyenMai.TenKM%)</i>
                     <p class="short-article__title">Mô tả</p>
                     <ul>
                         <li>@Model.MoTa</li>
@@ -146,9 +149,9 @@
                     <div class="product-price-btn">
                         @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMasp = @Model.MaSP, @strURL = Request.Url.ToString() }))
                         {
-                           <button class="btn-cart"> 
-								Thêm vào giỏ
-							</button>
+                            <button class="btn-cart">
+                                Thêm vào giỏ
+                            </button>
                         }
                     </div>
                 </div>

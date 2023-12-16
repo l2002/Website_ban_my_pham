@@ -12,24 +12,24 @@ namespace Bán_Mỹ_Phẩm.Controllers
         //
         // GET: /Sanpham/
 
-        QLmyphamEntities db = new QLmyphamEntities();
+        QL_MyPham_DAEntities3 db = new QL_MyPham_DAEntities3();
 
         // GET: Sanpham
-        public ActionResult MAC()
+        public ActionResult Dior()
         {
-            var nh = db.Sanphams.Where(n=>n.Math==2).Take(4).ToList();
+            var nh = db.SanPhams.Where(n=>n.MaTH=="TH00").Take(4).ToList();
            return PartialView(nh);
         }
 
-        public ActionResult Dior()
+        public ActionResult Burberry()
         {
-            var td = db.Sanphams.Where(n => n.Math == 4).Take(4).ToList();
+            var td = db.SanPhams.Where(n => n.MaTH == "TH05").Take(4).ToList();
             return PartialView(td);
         }
 
-        public ActionResult xemchitiet(int Masp=0)
+        public ActionResult xemchitiet(string Masp="")
         {
-            var chitiet = db.Sanphams.SingleOrDefault(n=>n.Masp==Masp);
+            var chitiet = db.SanPhams.SingleOrDefault(n=>n.MaSP==Masp);
             if (chitiet == null)
             {
                 Response.StatusCode = 404;

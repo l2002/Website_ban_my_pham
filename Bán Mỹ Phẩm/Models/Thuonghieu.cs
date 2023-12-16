@@ -12,16 +12,16 @@ namespace Bán_Mỹ_Phẩm.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Thuonghieu
+    public partial class ThuongHieu
     {
-        public Thuonghieu()
+        public ThuongHieu()
         {
-            this.Sanphams = new HashSet<Sanpham>();
+            this.SanPhams = new HashSet<SanPham>();
         }
     
-        public int Math { get; set; }
-        public string Tenth { get; set; }
+        public string MaTH { get; set; }
+        public string TenTH { get; set; }
     
-        public virtual ICollection<Sanpham> Sanphams { get; set; }
+        public virtual ICollection<SanPham> SanPhams { get; set; }
     }
 }

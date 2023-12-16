@@ -136,60 +136,79 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\HangSanXuatController.cs" />
-    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\SanphamController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThuonghieuController.cs" />
+    <Compile Include="Controllers\DatHangController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThuongHieuAPIController.cs" />
     <Compile Include="Controllers\SanphamController.cs" />
-    <Compile Include="Controllers\ThuongHieuController.cs" />
+    <Compile Include="Controllers\DanhMucController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Chitietdonhang.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+    <Compile Include="Models\ChitietdonhangOnl.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Donhang.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+    <Compile Include="Models\CTDonHang.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonHang.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonhangOnl.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
-    <Compile Include="Models\Hangsanxuat.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+    <Compile Include="Models\KhachHang.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhuyenMai.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoaiHang.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Login.cs" />
-    <Compile Include="Models\Nguoidung.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+    <Compile Include="Models\LoHang.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PhanQuyen.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+    <Compile Include="Models\NguoiDung.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QLmypham.Context.cs">
+    <Compile Include="Models\NhaCC.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhanVien.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBanMyPham.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLmypham.Context.tt</DependentUpon>
+      <DependentUpon>QLBanMyPham.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QLmypham.cs">
+    <Compile Include="Models\QLBanMyPham.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLmypham.tt</DependentUpon>
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QLmypham.Designer.cs">
+    <Compile Include="Models\QLBanMyPham.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLmypham.edmx</DependentUpon>
+      <DependentUpon>QLBanMyPham.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Sanpham.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+    <Compile Include="Models\QUYEN.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPham.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Thuonghieu.cs">
-      <DependentUpon>QLmypham.tt</DependentUpon>
+    <Compile Include="Models\TAIKHOAN.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThuongHieu.cs">
+      <DependentUpon>QLBanMyPham.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1995,33 +2014,11 @@
     <Content Include="Images\nh4.png" />
     <Content Include="Images\nh5.png" />
     <Content Include="Images\qc.gif" />
-    <EntityDeploy Include="Models\QLmypham.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLmypham.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Images\spnb1.jpg" />
     <Content Include="Images\spnb2.jpg" />
     <Content Include="Images\spnb3.jpg" />
     <Content Include="Images\td1.jpg" />
     <Content Include="Images\noel.gif" />
-    <Content Include="Models\QLmypham.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLmypham.edmx</DependentUpon>
-      <LastGenOutput>QLmypham.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\QLmypham.edmx.diagram">
-      <DependentUpon>QLmypham.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\QLmypham.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLmypham.edmx</DependentUpon>
-      <LastGenOutput>QLmypham.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Admin\Views\Web.config" />
-    <Content Include="Areas\Admin\Views\Shared\_LayoutPage-Admin.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Sanpham\DanhSach.cshtml" />
-    <Content Include="Areas\Admin\Views\Sanpham\Details.cshtml" />
     <Content Include="Areas\Assets\src\pug\layouts\authentication.pug" />
     <Content Include="Areas\Assets\src\pug\layouts\dashboard.pug" />
     <Content Include="Areas\Assets\src\pug\layouts\error.pug" />
@@ -2060,9 +2057,6 @@
     <Content Include="Areas\Assets\src\scss\variables\_spacing.scss" />
     <Content Include="Areas\Assets\src\scss\_global.scss" />
     <Content Include="Areas\Assets\src\scss\_variables.scss" />
-    <Content Include="Areas\Admin\Views\Sanpham\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Sanpham\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Sanpham\Delete.cshtml" />
     <Content Include="Areas\Assets\src\scss\navs\_global.scss" />
     <Content Include="Areas\Assets\src\scss\navs\_sidebar.scss" />
     <Content Include="Areas\Assets\src\scss\navs\_topbar.scss" />
@@ -2256,17 +2250,24 @@
     <Content Include="Areas\Assets\dist\assets\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Areas\Assets\dist\assets\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\Assets\dist\assets\vendor\jquery\jquery.slim.min.map" />
-    <Content Include="Areas\Admin\Views\Thuonghieu\DanhSach.cshtml" />
-    <Content Include="Areas\Admin\Views\Thuonghieu\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Thuonghieu\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Thuonghieu\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Thuonghieu\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\HangSanXuat\DanhSach.cshtml" />
-    <Content Include="Areas\Admin\Views\HangSanXuat\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\HangSanXuat\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\HangSanXuat\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\HangSanXuat\Delete.cshtml" />
+    <EntityDeploy Include="Models\QLBanMyPham.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBanMyPham.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBanMyPham.edmx.diagram">
+      <DependentUpon>QLBanMyPham.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Models\QLBanMyPham.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBanMyPham.edmx</DependentUpon>
+      <LastGenOutput>QLBanMyPham.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLBanMyPham.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBanMyPham.edmx</DependentUpon>
+      <LastGenOutput>QLBanMyPham.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -2295,23 +2296,25 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\SlidePartial.cshtml" />
-    <Content Include="Views\ThuongHieu\xemchitiet.cshtml" />
-    <Content Include="Views\Sanpham\MAC.cshtml" />
+    <Content Include="Views\Sanpham\Burberry.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Sanpham\Dior.cshtml" />
     <Content Include="Views\Home\Gioithieu.cshtml" />
     <Content Include="Views\User\Dangky.cshtml" />
     <Content Include="Views\User\Dangnhap.cshtml" />
     <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
-    <Content Include="Views\ThuongHieu\ThuongHieuPartial.cshtml" />
-    <Content Include="Views\ThuongHieu\SanPhamTheoTH.cshtml" />
     <Content Include="Views\Sanpham\xemchitiet.cshtml" />
-    <Content Include="Views\ThuongHieu\Delete.cshtml" />
+    <Content Include="Views\DatHang\Index.cshtml" />
+    <Content Include="Views\DatHang\Details.cshtml" />
+    <Content Include="Views\Sanpham\Dior.cshtml" />
+    <Content Include="Views\DanhMuc\ThuongHieuPartial.cshtml" />
+    <Content Include="Views\DanhMuc\SanPhamTheoTH.cshtml" />
+    <Content Include="Views\GioHang\SuaGioHang_View.cshtml" />
+    <Content Include="Views\DanhMuc\xemchitiet.cshtml" />
+    <Content Include="Views\User\ThongTinKhach.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

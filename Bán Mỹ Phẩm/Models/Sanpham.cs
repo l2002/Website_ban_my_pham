@@ -12,25 +12,60 @@ namespace Bán_Mỹ_Phẩm.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Sanpham
+    public partial class SanPham
     {
-        public Sanpham()
+        public SanPham()
         {
-            this.Chitietdonhangs = new HashSet<Chitietdonhang>();
+            this.ChitietdonhangOnls = new HashSet<ChitietdonhangOnl>();
+            this.CTDonHangs = new HashSet<CTDonHang>();
+            this.LoHangs = new HashSet<LoHang>();
         }
     
-        public int Masp { get; set; }
-        public string Tensp { get; set; }
-        public Nullable<decimal> Giatien { get; set; }
-        public Nullable<int> Soluong { get; set; }
-        public string Mota { get; set; }
-        public Nullable<bool> Sanphammoi { get; set; }
-        public string Anhbia { get; set; }
-        public Nullable<int> Mahang { get; set; }
-        public Nullable<int> Math { get; set; }
-    
-        public virtual ICollection<Chitietdonhang> Chitietdonhangs { get; set; }
-        public virtual Hangsanxuat Hangsanxuat { get; set; }
-        public virtual Thuonghieu Thuonghieu { get; set; }
+        public string MaSP { get; set; }
+        public string TenSP { get; set; }
+        public string MaLoai { get; set; }
+        public string MaKM { get; set; }
+        public string MaTH { get; set; }
+        public Nullable<System.DateTime> HSD { get; set; }
+        public string HinhAnh { get; set; }
+        public Nullable<decimal> GiaBan { get; set; }
+        public string MoTa { get; set; }
+
+        public decimal? iKHuyenMai()
+        {
+
+            if (KhuyenMai != null)
+            {
+                int? km = KhuyenMai.TenKM;
+                return GiaBan - GiaBan * km / 100;
+            }
+            else
+            {
+                return GiaBan;
+            }
+                
+                            
+        }
+        public int? tenKMNull()
+        {
+            KhuyenMai tenKM = new KhuyenMai();
+            if (KhuyenMai != null)
+            {
+                return KhuyenMai.TenKM;
+            }
+            else if(KhuyenMai == null)
+            {
+               
+                tenKM.TenKM = 0;
+            }
+            return tenKM.TenKM;
+        }
+
+        public virtual ICollection<ChitietdonhangOnl> ChitietdonhangOnls { get; set; }
+        public virtual ICollection<CTDonHang> CTDonHangs { get; set; }
+        public virtual KhuyenMai KhuyenMai { get; set; }
+        public virtual LoaiHang LoaiHang { get; set; }
+        public virtual ICollection<LoHang> LoHangs { get; set; }
+        public virtual ThuongHieu ThuongHieu { get; set; }
     }
 }

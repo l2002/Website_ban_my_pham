@@ -12,21 +12,16 @@ namespace Bán_Mỹ_Phẩm.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DonHang
+    public partial class QUYEN
     {
-        public DonHang()
+        public QUYEN()
         {
-            this.CTDonHangs = new HashSet<CTDonHang>();
+            this.TAIKHOANs = new HashSet<TAIKHOAN>();
         }
     
-        public string MaDH { get; set; }
-        public string MaKH { get; set; }
-        public string MaNV { get; set; }
-        public Nullable<System.DateTime> NgayDat { get; set; }
-        public Nullable<decimal> TongTien { get; set; }
+        public int iMaQuyen { get; set; }
+        public string sTenQuyen { get; set; }
     
-        public virtual ICollection<CTDonHang> CTDonHangs { get; set; }
-        public virtual KhachHang KhachHang { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
+        public virtual ICollection<TAIKHOAN> TAIKHOANs { get; set; }
     }
 }

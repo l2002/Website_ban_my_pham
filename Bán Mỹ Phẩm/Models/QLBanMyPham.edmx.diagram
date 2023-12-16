@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a4c9342a826043d182483c62228e247e" Name="Diagram1">
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.ChitietdonhangOnl" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.CTDonHang" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.DonHang" Width="1.5" PointX="6" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.DonhangOnl" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.KhachHang" Width="1.5" PointX="3.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.KhuyenMai" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.LoaiHang" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.LoHang" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.NguoiDung" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.NhaCC" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.NhanVien" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.QUYEN" Width="1.5" PointX="3.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.SanPham" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.TAIKHOAN" Width="1.5" PointX="6" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_MyPham_DAModel.ThuongHieu" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_ChitietdonhangOnl_DonhangOnl" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_ChitietdonhangOnl_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_CTDonHang_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_CTDonHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_Donhang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_DonHang_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_DonhangOnl_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_SanPham_KhuyenMai" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_SanPham_LoaiHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_LoHang_NhaCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_LoHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_TAIKHOAN_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_TAIKHOAN_QUYEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_MyPham_DAModel.FK_SanPham_ThuongHieu" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

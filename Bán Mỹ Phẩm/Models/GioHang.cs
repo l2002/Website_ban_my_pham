@@ -7,26 +7,31 @@ namespace Bán_Mỹ_Phẩm.Models
 {
     public class GioHang
     {
-        QLmyphamEntities db = new QLmyphamEntities();
+        QL_MyPham_DAEntities3 db = new QL_MyPham_DAEntities3();
 
-        public int iMasp { get; set; }
+        public string iMasp { get; set; }
         public string sTensp { get; set; }
         public string sAnhBia { get; set; }
-        public double dDonGia { get; set; }
+        public decimal dDonGia { get; set; }
         public int iSoLuong { get; set; }
-        public double ThanhTien
+        public int iKhuyenMai { get; set; }
+
+        public virtual KhuyenMai KhuyenMai { get; set; }
+
+        public decimal? ThanhTien
         {
-            get { return iSoLuong * dDonGia; }
+            get { return iSoLuong * dDonGia - iSoLuong * dDonGia * iKhuyenMai/100; }
         }
 
         //Hàm tạo cho giỏ hàng
-        public GioHang(int Masp)
+        public GioHang(string Masp)
         {
             iMasp = Masp;
-            Sanpham sp = db.Sanphams.Single(n => n.Masp == iMasp);
-            sTensp = sp.Tensp;
-            sAnhBia = sp.Anhbia;
-            dDonGia = double.Parse(sp.Giatien.ToString());
+            SanPham sp = db.SanPhams.Single(n => n.MaSP == iMasp);
+            sTensp = sp.TenSP;
+            sAnhBia = sp.HinhAnh;
+            dDonGia = decimal.Parse(sp.GiaBan.ToString());
+            iKhuyenMai = int.Parse(sp.KhuyenMai.TenKM.ToString());
             iSoLuong = 1;
         }
     }

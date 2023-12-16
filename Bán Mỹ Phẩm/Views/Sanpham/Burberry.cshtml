@@ -1,9 +1,7 @@
 ﻿@using Bán_Mỹ_Phẩm.Models;
 @model List<SanPham>
 
-
-
-<div class="row">
+<div class="row" >
     @foreach (var item in Model)
     {
         <div class="col-md-3">
@@ -13,7 +11,7 @@
                         <img src=@Url.Content("~/Images/"+ item.HinhAnh) class="img-responsive" alt="" width="400" height="400" />
                     </a>
                 </div>
-                <div class="wsk-cp-text">
+                <div class="wsk-cp-text">                  
                     <div class="category">
                         <span>#@item.ThuongHieu.TenTH</span>
                     </div>
@@ -23,22 +21,19 @@
                     <div class="card-footer" id="sanpham">
                         <strike>
                             @String.Format("{0:0,0}", @item.GiaBan) VNĐ
-                        </strike><br />
+                        </strike>
                         <div class="wcf-left">
                             <strong class="price">
-                            @String.Format("{0:0,0}", @item.iKHuyenMai()) VNĐ
-                            <small>-@item.tenKMNull()%</small>
+                                @String.Format("{0:0,0}", @item.iKHuyenMai()) VNĐ
+                                <small>-@item.tenKMNull()%</small>
                             </strong>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        
     }
 </div>
 
 
-<style>
-
-</style>
